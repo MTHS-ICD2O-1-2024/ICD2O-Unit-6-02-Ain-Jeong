@@ -14,13 +14,14 @@ function cookieClicker () {
   // input
   let cookieClick = localStorage.getItem('cookieClick')
 
-    if (cookieClick >= 1) {
+  // process
+  if (cookieClick != null) {
     cookieClick = Number(cookieClick) + 1
   } else {
     cookieClick = 1
   }
 
-  cookieClick = localStorage.getItem('cookieClick')
+  localStorage.setItem('cookieClick', cookieClick)
 
   // output
   document.getElementById('answer').innerHTML = cookieClick + ' Cookies'
